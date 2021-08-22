@@ -1,98 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kelurahan Tuah Negeri</title>
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
-    <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
-    <!-- Slicknav -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
-    <!-- Off Canvas Menu -->
-    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
-    <!-- Color Switcher -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vegas.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-  </head>
-  <body>
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+		
+		<!--FAVICON-->
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+		<link rel="manifest" href="assets/img/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 
-    <div class="bg-wraper overlay has-vignette">
-      <div id="example" class="slider opacity-50 vegas-container" style="height: 983px;"></div>
-    </div>
+        <title>Kelurahan Tuah Negeri</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Kelurahan Tuah Negeri</a>
 
-    <!-- Coundown Section Start -->
-    <section class="countdown-timer">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="heading-count">
-              <h2>KAMI AKAN LAUNCHING DALAM...</h2>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="sejarah.html" class="nav__link">Sejarah</a>
+                        </li>
+						<li class="nav__item">
+                            <a href="statistik.html" class="nav__link">Statistik</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="sketsapeta.html" class="nav__link">Sketsa Peta</a>
+                    </ul>
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <img src="assets/img/hero.jpg" alt="" class="home__img">
+
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <span class="home__data-subtitle">Motto Kami :</span>
+                        <h1 class="home__data-title"><b>Bersama</b><br>membangun<br><b>Tuah Negeri</b></h1>
+                        <span class="home__data-subtitle">(Bersih, Elok, Rindang, Santun, Amanah, Mandiri & Aman)</span>
+                    </div>
+
+                    <!--<div class="home__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="home__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>-->
+						
+					<div class="avatar">
+						<img src="assets/img/logopku.png" alt="logo pekanbaru"/>
+					</div>
+					
+                </div>
+            </section>
+
+            <!--==================== Sejarah Singkat ====================-->
+            <!--<section class="sejarah-singkat section" id="sejarah-singkat">
+                <div class="sejarah-singkat__container container grid">
+                    <div class="sejarah-singkat__data">
+                        <h2 class="section__title sejarah-singkat__title"></h2>
+                        <p class="sejarah-singkat__description">Berawal dari sebuah jalan yang sering 
+                            dilalui oleh binatang buas kemudian berkembang menjadi sebuah pusat 
+                            pemerintahan, itulah kenapa daerah ini dinamai <b>Tuah Negeri</b>. 
+                            Tuah sendiri memiliki arti suatu keberuntungan, kelebihan dan harapan
+                            yang tidak diduga-duga.
+                        </p>
+                    </div>
+                    <div class="sejarah-singkat__img">
+                        <div class="sejarah-singkat__img-overlay">
+                            <img src="assets/img/about1.jpg" alt="" class="sejarah-singkat__img-one">
+                        </div>
+
+                        <div class="sejarah-singkat__img-overlay">
+                            <img src="assets/img/about2.jpg" alt="" class="sejarah-singkat__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <!--==================== Profil dan Potensi ====================-->
+            <section class="profil section">
+                <h2 class="section__title">Profil & Potensi<br> Kelurahan Tuah Negeri</h2>
+
+                <div class="profil__container container grid">
+                    <div class="profil__content grid">
+                        <div class="profil__data">
+                            <h2 class="profil__number">2017</h2>
+                            <span class="profil__description">Awal berdiri <br></span>
+                        </div>
+
+                        <div class="profil__data">
+                            <h2 class="profil__number">±25,50 km²</h2>
+                            <span class="profil__description">Total Luas Wilayah <br></span>
+                        </div>
+
+                        <div class="profil__data">
+                            <h2 class="profil__number">6.018</h2>
+                            <span class="profil__description">Penduduk <br></span>
+                        </div>
+                    </div>
+
+                    <div class="profil__img grid">
+                        <div class="profil__overlay">
+                            <img src="assets/img/profil1.jpg" alt="" class="profil__img-one">
+                        </div>
+                        
+                        <div class="profil__overlay">
+                            <img src="assets/img/profil2.jpg" alt="" class="profil__img-two">
+                        </div>
+                    </div>
+                </div>
+				<div>
+					<p class="profil-potensi-description">Kelurahan Tuah Negeri merupakan salah satu central batu bata di Provinsi Riau.
+					Kandungan tanah di Kelurhan Tuah Negeri hanya mengandung pasir dan kapur, sehingga
+					sangat cocok untuk dijadikan bahan baku pembuatan batu bata.Ada banyak industri 
+					batu bata yang berkembang di Kelurahan Tuah Negeri, mulai dari yang berskala kecil 
+					hingga skala besar. Selain batu bata, minyak kelapa sawit juga menjadi potensi Kelurahan
+                    Tuah Negeri. Minyak kelapa sawit Kelurahan Tuah Negeri berkualitas ekspor dan merupakan
+                    komoditas unggulan daerah.
+				</div>
+            </section>
+            <!--==================== Wisata ====================-->
+            <!--
+            <section class="wisata section" id="wisata">
+                <h2 class="section__title">Kunjungi Wisata <br> Terbaik Kami</h2>
+                
+                <div class="wisata__container container swiper-container">
+                    <div class="swiper-wrapper"> -->
+                        <!--==================== wisata 1 ====================-->
+                        <!--<div class="wisata__card swiper-slide">
+                            <img src="assets/img/wisata1.jpg" alt="" class="wisata__img">
+                            <div class="wisata__data">
+                                <h2 class="wisata__title">Nama Tempat Wisata</h2>
+                                <span class="wisata__description">Lokasi Tempat Wisata</span>
+                            </div>
+                        </div> -->
+
+                        <!--==================== wisata 2 ====================-->
+                        <!--<div class="wisata__card swiper-slide">
+                            <img src="assets/img/wisata2.jpg" alt="" class="wisata__img">
+                            <div class="wisata__data">
+                                <h2 class="wisata__title">Nama Tempat Wisata</h2>
+                                <span class="wisata__description">Lokasi Tempat Wisata</span>
+                            </div>
+                        </div> -->
+
+                        <!--==================== wisata 3 ====================-->
+                        <!--<div class="wisata__card swiper-slide">
+                            <img src="assets/img/wisata3.jpg" alt="" class="wisata__img">
+                            <div class="wisata__data">
+                                <h2 class="wisata__title">Nama TempaT Wisata</h2>
+                                <span class="wisata__description">Lokasi Tempat Wisata</span>
+                            </div>
+                        </div> -->
+
+                        <!--==================== wisata 4 ====================-->
+                        <!--<div class="wisata__card swiper-slide">
+                            <img src="assets/img/wisata4.jpg" alt="" class="wisata__img">
+                            <div class="wisata__data">
+                                <h2 class="wisata__title">Nama Tempat Wisata</h2>
+                                <span class="wisata__description">Lokasi Tempat Wisata</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!--==================== VIDEO ====================-->
+            <section class="video section">
+                <h2 class="section__title">Video Tour</h2>
+
+                <div class="video__container container">
+                    <p class="video__description">Cari tahu lebih lanjut dengan video 
+                        tentang tempat paling indah dan menyenangkan untuk Anda dan keluarga.
+                    </p>
+
+                    <div class="video__content">
+                        <video id="video-file">
+                            <source src="assets/video/video.mp4" type="video/mp4">
+                        </video>
+
+                        <button class="button button--flex video__button" id="video-button">
+                            <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== berita ====================-->
+            
+            <section class="berita section" id="berita">
+                <h2 class="section__title">Info & Berita</h2>
+
+                <div class="berita__container container grid">
+                    <!--==================== berita 1 ====================-->
+                    <div class="berita__card">
+                        <img src="assets/img/berita 1.jpg" alt="" class="berita__img">
+                        
+                        <div class="berita__content">
+                            <span class="berita__rating">
+                                <span class="berita__rating-number"></span>
+                            </span>
+
+                            <div class="berita__data">
+                                <h3 class="berita__title">Mahasiswa KKN Tuah Negeri...</h3>
+                                <span class="berita__subtitle">Minggu, 1 Agustus 2021</span>
+                            </div>
+                        </div>
+                        <a href="https://www.riauonline.co.id/riau/read/2021/08/01/mahasiswa-kkn-tuah-negeri-lakukan-penyemprotan-disinfektan#" target="blank"><button class="button button--flex berita__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </button></a>
+                    </div>
+
+                    <!--==================== berita CARD 2 ====================-->
+                    <div class="berita__card">
+                        <img src="assets/img/info2.jpg" alt="" class="berita__img">
+                        
+                        <div class="berita__content">
+                            <span class="berita__rating">
+                                <span class="berita__rating-number"></span>
+                            </span>
+
+                            <div class="berita__data">
+                                <h3 class="berita__title">Profil Kelurahan Tuah Negeri</h3>
+                                <span class="berita__subtitle">Sumber, Wikipedia</span>
+                            </div>
+                        </div>
+                        <a href="https://id.wikipedia.org/wiki/Tuah_Negeri,_Tenayan_Raya,_Pekanbaru" target="blank"><button class="button button--flex berita__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </button></a>
+                    </div>
+
+                    <!--==================== berita CARD 3 ====================-->
+                    <!--<div class="berita__card">
+                        <img src="assets/img/place1.jpg" alt="" class="berita__img">
+                        
+                        <div class="berita__content">
+                            <span class="berita__rating">
+                                <span class="berita__rating-number"></span>
+                            </span>
+
+                            <div class="berita__data">
+                                <h3 class="berita__title">Kisah Lahirnya Maul Al-Masih </h3>
+                                <span class="berita__subtitle">27 July 2021</span>
+                            </div>
+                        </div>
+                        <button class="button button--flex berita__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+
+                    <!--==================== berita CARD 4 ====================-->
+                    <!--<div class="berita__card">
+                        <img src="assets/img/place1.jpg" alt="" class="berita__img">
+                        
+                        <div class="berita__content">
+                            <span class="berita__rating">
+                                <span class="berita__rating-number"></span>
+                            </span>
+
+                            <div class="berita__data">
+                                <h3 class="berita__title"> Jadi Atheis dalam 5 menit (no root) </h3>
+                                <span class="berita__subtitle">27 July 2021</span>
+                            </div>
+                        </div>
+                        <button class="button button--flex berita__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+
+                    <!--==================== berita CARD 5 ====================-->
+                    <!--<div class="berita__card">
+                        <img src="assets/img/place1.jpg" alt="" class="berita__img">
+                        
+                        <div class="berita__content">
+                            <span class="berita__rating">
+                                <span class="berita__rating-number"></span>
+                            </span>
+
+                            <div class="berita__data">
+                                <h3 class="berita__title">Cara Merakit Bom hanya dalam 5 Langkah </h3>
+                                <span class="berita__subtitle">27 July 2021</span>
+                            </div>
+                        </div>
+                        <button class="button button--flex berita__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+            </section>
+
+            <!--==================== SUBSCRIBE ====================-->
+            
+            <!--==================== SPONSORS ====================-->
+            
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">Kelurahan Tuah Negeri</h3>
+                        <p class="footer__description">Bersama Membangun<br>Tuah Negeri. 
+                        </p>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Info</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Sejarah</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Statistik</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Sketsa Peta</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Statistik</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Rumah Ibadah</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer__link">Jumlah Penduduk</a> 
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Tim Kukerta</h3>
+						<img src="assets/img/logo-kkn.png" width="150px">
+                        <ul>
+                            <div id="footer-social-icon">
+                            </a>
+                            <a href="https://id.wikipedia.org/wiki/Tuah_Negeri,_Tenayan_Raya,_Pekanbaru" target="_blank" class="footer__social">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgVJREFUSEvtVd1t01AUPl9QJN6wO0EyQbtBbT+huJXMBJQJMBM0TICZgDABkagjnmKzQTYgXSA2b0jB/tD1zbUdp40BKW/1m0/uud/5fo4DOfGDE98vTwC9CtcSWc6VIwDrDm7v8/Tbeq/O4meeLlb7te29yPNcUJy30fLk63f1vgcAMBKRc4Afy7KMNMB1AJRfRGRN8pUBAJhA5HPJYloByO8LgHMRSUlEeXqX7gGoFzWZadwk8Y2Z6Mz1ZxR5TcJVjbtzsyyJR+aM5QQWsF2Tw1GeznNTP0iR7forxYIc2uag5bwcAc9+qIkVsO1OUlJmebqY1QCeHw6Eo81yEbalOgCwnMkNgE8A3m+Wd9OahTeJSLwl+QZAmCXxRfsi2/XXZOEoWY8CqB/VYRF5QQ7HDQstga5rqRp5roMByqAt66MSVV54fgjKB0Le5ctYGV89jRfFuD2p7frztrG9DIxhIpJlSTw2DUp7EVwaL3QwKn/mXcmOMqim9a6mJG+V5spMnZxy5wkuSc3izJtEZSmrtuG9DPRkteYVC52cQQXQ7MAwBLbpY9Mf7EF3743mavFIBCb3JsoqaaqnnbbuHUe/pib/qslIpdnpKOt6sy/dy3sZ7CI7F6GVJQunm3uIpA9F8688aDIeWCK/rO4CKXbqG9T+LPwXg4ea/qX29I/Wq9bJJfoDvXQjKJbpS4sAAAAASUVORK5CYII="/>
+                            </a>
+                            <a href="https://www.instagram.com/kkn.tuahnegeri2021/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2021 Tim KUKERTA Balek Kampung Universitas Riau.</p>
+                    <div class="footer__terms">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="row time-countdown justify-content-center">
-              <div id="clock" class="time-count"></div>
-            </div>
-			<h5>
-				Stay tuned
-			</h5>
-            <div class="social mt-4">
-              <!--<a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>-->
-              <!--<a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>-->
-              <a class="instagram" href="https://www.instagram.com/kkn.tuahnegeri2021/" target="blank"><i class="lni-instagram-filled"></i></a>
-              <!--<a class="google" href="#"><i class="lni-google-plus"></i></a>-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Coundown Section End -->
+        </footer>
 
-    <!-- Preloader -->
-    <div id="preloader">
-      <div class="loader" id="loader-1"></div>
-    </div>
-    <!-- End Preloader -->
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/vegas.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/classie.js"></script>
-    <script src="assets/js/jquery.nav.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script> 
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.slicknav.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/form-validator.min.js"></script>
-    <script src="assets/js/contact-form-script.min.js"></script>
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <script type="text/javascript">
-      $("#example").vegas({
-          timer: false,
-          delay: 1000000,
-          transitionDuration: 2000,
-          transition: "blur",
-          slides: [
-              { src: "assets/img/hero1.jpg" },
-              { src: "assets/img/hero1.jpg" },
-              { src: "assets/img/hero1.jpg" }
-          ]
-      });
-    </script>
-      
-  </body>
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    </body>
 </html>

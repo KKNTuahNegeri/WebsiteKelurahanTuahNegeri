@@ -1,77 +1,332 @@
-(function($) {
-  
-  "use strict";  
+/*==================== SHOW MENU ====================*/
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
 
-  $(window).on('load', function() {
+/*===== MENU SHOW =====*/
+/* Validate if constant exists */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
 
-     /* Page Loader active
-    ========================================================*/
-    $('#preloader').fadeOut();
+/*===== MENU HIDDEN =====*/
+/* Validate if constant exists */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
 
-  // Sticky Nav
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() > 200) {
-            $('.scrolling-navbar').addClass('top-nav-collapse');
-        } else {
-            $('.scrolling-navbar').removeClass('top-nav-collapse');
+/*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+/*==================== CHANGE BACKGROUND HEADER ====================*/
+function scrollHeader(){
+    const header = document.getElementById('header')
+    // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
+    if(this.scrollY >= 100) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
+
+/*==================== SWIPER DISCOVER ====================*/
+let swiper = new Swiper(".discover__container", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    spaceBetween: 32,
+    coverflowEffect: {
+        rotate: 0,
+    },
+})
+
+/*==================== VIDEO ====================*/
+const videoFile = document.getElementById('video-file'),
+      videoButton = document.getElementById('video-button'),
+      videoIcon = document.getElementById('video-icon')
+
+function playPause(){ 
+    if (videoFile.paused){
+        // Play video
+        videoFile.play()
+        // We change the icon
+        videoIcon.classList.add('ri-pause-line')
+        videoIcon.classList.remove('ri-play-line')
+    }
+    else {
+        // Pause video
+        videoFile.pause(); 
+        // We change the icon
+        videoIcon.classList.remove('ri-pause-line')
+        videoIcon.classList.add('ri-play-line')
+
+    }
+}
+videoButton.addEventListener('click', playPause)
+
+function finalVideo(){
+    // Video ends, icon change
+    videoIcon.classList.remove('ri-pause-line')
+    videoIcon.classList.add('ri-play-line')
+}
+// ended, when the video ends
+videoFile.addEventListener('ended', finalVideo)
+
+/*SCROLL PORTFOLIO*/
+sr.reveal('.portfolio__img', {interval: 200})
+
+
+/*==================== SHOW SCROLL UP ====================*/ 
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    distance: '60px',
+    duration: 2800,
+    // reset: true,
+})
+
+
+sr.reveal(`.home__data, .home__social-link, .home__info,
+           .discover__container,
+           .experience__data, .experience__overlay,
+           .place__card,
+           .sponsor__content,
+           .footer__data, .footer__rights`,{
+    origin: 'top',
+    interval: 100,
+})
+
+sr.reveal(`.about__data, 
+           .video__description,
+           .subscribe__description`,{
+    origin: 'left',
+})
+
+sr.reveal(`.about__img-overlay, 
+           .video__content,
+           .subscribe__form`,{
+    origin: 'right',
+    interval: 100,
+})
+
+/*==================== DARK LIGHT THEME ====================*/ 
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'ri-sun-line'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
+/**
+   * Chart.js
+   */
+ $(function () {/*from   w ww .  ja va2 s  . c o  m*/
+
+    //style
+        Chart.defaults.global.defaultFontFamily = 'arial';
+        Chart.defaults.global.defaultFontSize = 16;
+        Chart.defaults.global.defaultFontColor = '#000';
+    
+    
+        var ctx = document.getElementById("chart-gender").getContext('2d');
+        var data = {
+            datasets: [{
+                data: [32099, 33193,],
+                backgroundColor: [
+                    '#0dcaf0',
+                    '#ff6c98',
+                ],
+            }],
+            labels: [
+                'ganti',
+                'Perempuan'
+            ]
+        };
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12
+                    }
+                }
+            }
+        });
+
+        var ctx_2 = document.getElementById("chart-usia").getContext('2d');
+        var data_2 = {
+            datasets: [{
+                data: [16926, 37220, 11146],
+                backgroundColor: [
+                    '#0dcaf0',
+                    '#ff6c98',
+                    '#51b25a',
+                ],
+            }],
+            labels: [
+                'Usia 0-15',
+                'Usia 15-65',
+                'Usia >65'
+            ]
+        };
+        var myPieChart_2 = new Chart(ctx_2, {
+            type: 'pie',
+            data: data_2,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12
+                    }
+                }
+            }
+        });
+        
+
+        var ctx_3 = document.getElementById("chart-pekerjaan").getContext('2d');
+        var data_3 = {
+            datasets: [{
+                data: [16991, 9210, 3416, 3613, 5652, 2814, 426, 58, 20012],
+                backgroundColor: [
+                    '#0dcaf0',
+                    '#ff6c98',
+                    '#51b25a',
+                    '#ac6ec7',
+                    '#f89236',
+                    '#f9f871',
+                    '#aa2a6a',
+                    '#1d7868',
+                    '#2bd532',
+                ],
+            }],
+            labels: [
+                'Karyawan',
+                'Wiraswasta',
+                'Tani',
+                'Pertukangan',
+                'Buruh Tani',
+                'Pensiunan',
+                'Guru',
+                'Lainnya',
+                'Tidak bekerja'
+            ]
+        };
+        var myPieChart_3 = new Chart(ctx_3, {
+            type: 'pie',
+            data: data_3,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12
+                    }
+                }
+            }
+        });
+        
+        var ctx_4 = document.getElementById("chart-pendidikan").getContext('2d');
+        var data_4 = {
+            datasets: [{
+                data: [5955, 13618, 10908, 22368, 2731, 2317, 295],
+                backgroundColor: [
+                    '#0dcaf0',
+                    '#ff6c98',
+                    '#51b25a',
+                    '#ac6ec7',
+                    '#f89236',
+                    '#f9f871',
+                    '#aa2a6a',
+                ],
+            }],
+            labels: [
+                'TK',
+                'SD/Sederajat',
+                'SMP/Sederajat',
+                'SMA/Sederajat',
+                'Akademi/D1-D3',
+                'Sarjana (S1)',
+                'Pascasarjana (S2,S3)',
+            ]
+        };
+        var myPieChart_4 = new Chart(ctx_4, {
+            type: 'pie',
+            data: data_4,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12
+                    }
+                }
+            }
+        });
     });
-
-    /* slicknav mobile menu active  */
-    $('.mobile-menu').slicknav({
-      prependTo: '.navbar-header',
-      parentTag: 'liner',
-      allowParentLinks: true,
-      duplicate: true,
-      label: '',
-      closedSymbol: '<i class="icon-arrow-right"></i>',
-      openedSymbol: '<i class="icon-arrow-down"></i>',
-    });
-
-    /* ==========================================================================
-    countdown timer
-    ========================================================================== */
-     jQuery('#clock').countdown('2021/08/24',function(event){
-      var $this=jQuery(this).html(event.strftime(''
-      +'<div class="time-entry days"><span>%-D</span> Hari</div> '
-      +'<div class="time-entry hours"><span>%H</span> Jam</div> '
-      +'<div class="time-entry minutes"><span>%M</span> Menit</div> '
-      +'<div class="time-entry seconds"><span>%S</span> Detik</div> '));
-    });
-
-    /* WOW Scroll Spy
-    ========================================================*/
-     var wow = new WOW({
-      //disabled for mobile
-        mobile: false
-    });
-    wow.init();
-
-    // one page navigation 
-    $('.onepage-nev').onePageNav({
-            currentClass: 'active'
-    }); 
-
-    /* Back Top Link active
-    ========================================================*/
-      var offset = 200;
-      var duration = 500;
-      $(window).scroll(function() {
-        if ($(this).scrollTop() > offset) {
-          $('.back-to-top').fadeIn(400);
-        } else {
-          $('.back-to-top').fadeOut(400);
-        }
-      });
-
-      $('.back-to-top').on('click',function(event) {
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: 0
-        }, 600);
-        return false;
-      });
-
-  });      
-
-}(jQuery));

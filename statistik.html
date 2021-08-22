@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+		
+				<!--FAVICON-->
+		<link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="assets/img/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="assets/img/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+		<link rel="manifest" href="assets/img/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+        <title>Statistik-Kelurahan Tuah Negeri</title>
+
+	<!-- Chart.js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script> 
+	
+	<script>
+        $(function () {/*from   w ww .  ja va2 s  . c o  m*/
+		//style
+		    Chart.defaults.global.defaultFontFamily = 'arial';
+			Chart.defaults.global.defaultFontSize = 16;
+			Chart.defaults.global.defaultFontColor = '#000';
+		
+		
+            var ctx = document.getElementById("chart-gender").getContext('2d');
+            var data = {
+                datasets: [{
+                    data: [6, 14, 2],
+                    backgroundColor: [
+                        '#3c8dbc',
+                        '#f56954',
+                        '#f39c12',
+                    ],
+                }],
+                labels: [
+                    'Masjid',
+                    'Mushalla',
+                    'Gereja'
+                ]
+            };
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12
+                        }
+                    }
+                }
+            });
+			
+			var ctx_3 = document.getElementById("chart-pekerjaan").getContext('2d');
+			var data_3 = {
+                datasets: [{
+                    data: [3462, 2556],
+                    backgroundColor: [
+                        '#3c8dbc',
+                        '#f56954',
+                    ],
+                }],
+                labels: [
+                    'Laki-laki',
+                    'Perempuan'
+                ]
+            };
+            var myPieChart_3 = new Chart(ctx_3, {
+                type: 'pie',
+                data: data_3,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12
+                        }
+                    }
+                }
+            });
+			
+
+			var ctx_4 = document.getElementById("chart-pendidikan").getContext('2d');
+			var data_4 = {
+                datasets: [{
+                    data: [5955, 13618, 10908, 22368, 2731, 2317, 295],
+                    backgroundColor: [
+                        '#3c8dbc',
+                        '#f56954',
+                        '#f39c12',
+						'#481f33',
+						'#750201',
+						'#603c6c',
+						'#a02b6b',
+                    ],
+                }],
+                labels: [
+                    'TK',
+                    'SD/Sederajat',
+                    'SMP/Sederajat',
+					'SMA/Sederajat',
+					'Akademi/D1-D3',
+					'Sarjana (S1)',
+					'Pascasarjana (S2,S3)',
+                ]
+            };
+            var myPieChart_4 = new Chart(ctx_4, {
+                type: 'pie',
+                data: data_4,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12
+                        }
+                    }
+                }
+            });
+        });
+      </script>
+
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Kelurahan Tuah Negeri</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link ">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="sejarah.html" class="nav__link">Sejarah</a>
+                        </li>
+						<li class="nav__item">
+                            <a href="statistik.html" class="nav__link active-link">Statistik</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="sketsapeta.html" class="nav__link">Sketsa Peta</a>
+                    </ul>
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <img src="assets/img/hero.jpg" alt="" class="home__img">
+
+                <div class="home__container container grid">
+                    <div class="home__data" id="sejarah">
+                        <h1 class="home__data-title">Statistik<br><b>Tuah Negeri</b></h1>
+                    </div>
+            </section>
+
+            <!--==================== Statistik ====================-->
+            <section id="statistik">
+                <div class="container" data-aos="fade-up">
+                  <div id="penduduk" class="section-title" data-aos="fade-up">
+                    <h2 id="section-title-inner-page">Statistik</h2>
+                    <p id="section-subtitle-inner-page">Rumah Ibadah</p>
+                  </div>
+                  <div> 
+                   <canvas id="chart-gender" width="240px" height="240px"></canvas> 
+                  </div>
+
+                  <div id="pekerjaan" class="section-title" data-aos="fade-up">
+                    <h2 id="section-title-inner-page">Statistik Penduduk</h2>
+                    <p id="section-subtitle-inner-page">Berdasarkan Gender</p>
+                  </div>
+                  <div> 
+                   <canvas id="chart-pekerjaan" width="240px" height="240px"></canvas> 
+                  </div>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div class="footer__data">
+                        <h3 class="footer__title">Kelurahan Tuah Negeri</h3>
+                        <p class="footer__description">Bersama Membangun<br>Tuah Negeri. 
+                        </p>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Info</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Sejarah</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Statistik</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Sketsa Peta</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Statistik</h3>
+                        <ul>
+                            <li class="footer__item">
+                                <a href="" class="footer__link">Rumah Ibadah</a>
+                            </li>
+                            <li>
+                                <a href="" class="footer__link">Jumlah Penduduk</a> 
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer__data">
+                        <h3 class="footer__subtitle">Tim Kukerta</h3>
+						<img src="assets/img/logo-kkn.png" width="150px">
+                        <ul>
+                            <div id="footer-social-icon">
+                            </a>
+                            <a href="https://id.wikipedia.org/wiki/Tuah_Negeri,_Tenayan_Raya,_Pekanbaru" target="_blank" class="footer__social">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgVJREFUSEvtVd1t01AUPl9QJN6wO0EyQbtBbT+huJXMBJQJMBM0TICZgDABkagjnmKzQTYgXSA2b0jB/tD1zbUdp40BKW/1m0/uud/5fo4DOfGDE98vTwC9CtcSWc6VIwDrDm7v8/Tbeq/O4meeLlb7te29yPNcUJy30fLk63f1vgcAMBKRc4Afy7KMNMB1AJRfRGRN8pUBAJhA5HPJYloByO8LgHMRSUlEeXqX7gGoFzWZadwk8Y2Z6Mz1ZxR5TcJVjbtzsyyJR+aM5QQWsF2Tw1GeznNTP0iR7forxYIc2uag5bwcAc9+qIkVsO1OUlJmebqY1QCeHw6Eo81yEbalOgCwnMkNgE8A3m+Wd9OahTeJSLwl+QZAmCXxRfsi2/XXZOEoWY8CqB/VYRF5QQ7HDQstga5rqRp5roMByqAt66MSVV54fgjKB0Le5ctYGV89jRfFuD2p7frztrG9DIxhIpJlSTw2DUp7EVwaL3QwKn/mXcmOMqim9a6mJG+V5spMnZxy5wkuSc3izJtEZSmrtuG9DPRkteYVC52cQQXQ7MAwBLbpY9Mf7EF3743mavFIBCb3JsoqaaqnnbbuHUe/pib/qslIpdnpKOt6sy/dy3sZ7CI7F6GVJQunm3uIpA9F8688aDIeWCK/rO4CKXbqG9T+LPwXg4ea/qX29I/Wq9bJJfoDvXQjKJbpS4sAAAAASUVORK5CYII="/>
+                            </a>
+                            <a href="https://www.instagram.com/kkn.tuahnegeri2021/" target="_blank" class="footer__social">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="footer__social">
+                                <i class="ri-youtube-fill"></i>
+                            </a>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2021 Tim KUKERTA Balek Kampung Universitas Riau.</p>
+                    <div class="footer__terms">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="assets/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
