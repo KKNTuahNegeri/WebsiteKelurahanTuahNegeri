@@ -23,7 +23,7 @@
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
-  /*========== Font and typography ==========*/
+  /*========== Font dan typography ==========*/
   --body-font: 'Open Sans', sans-serif;
   --title-font: 'Raleway', sans-serif;
   --biggest-font-size: 2.5rem;
@@ -34,11 +34,11 @@
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
 
-  /*========== Font weight ==========*/
+  /*========== Ukuran Font ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
 
-  /*========== Margines Bottom ==========*/
+  /*========== Margin Bottom ==========*/
   --mb-0-25: .25rem;
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
@@ -456,6 +456,16 @@ input {
   width: 130px;
 }
 
+.sejarah__img-one-home {
+  width: auto;
+  height: 320px;
+}
+
+.sejarah__img-two-home {
+  width: auto;
+  height: 320px;
+}
+
 .sejarah__img-two {
   width: 180px;
 }
@@ -516,6 +526,7 @@ input {
   row-gap: 2.5rem;
   justify-content: center;
   justify-items: center;
+  margin-bottom: 30px;
 }
 
 .profil__content {
@@ -870,6 +881,15 @@ input {
   .profil-potensi-description {
   padding: 20px;
   }
+  .sejarah__img-one-home {
+    width: auto;
+    height: 170px;
+  }
+  
+  .sejarah__img-two-home {
+    width: auto;
+    height: 170px;
+  }
 }
 
 /* For medium devices */
@@ -969,6 +989,7 @@ input {
   .sejarah__description {
     margin-bottom: var(--mb-2);
   }
+
   .discover__container {
     width: 610px;
     margin-left: auto;
